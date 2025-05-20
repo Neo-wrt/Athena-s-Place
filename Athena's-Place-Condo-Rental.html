@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Athena's Place - Luxury Condo in Trece Martires</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#D2B48C',secondary:'#8B4513'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Poppins', sans-serif;
+scroll-behavior: smooth;
+}
+h1, h2, h3, h4, h5 {
+font-family: 'Playfair Display', serif;
+}
+.hero-section {
+background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.85) 30%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%), url('https://static.readdy.ai/image/3674386df8dc4aaf2f910cdb65b10d5e/bb2bd812d519660ff1bb3b06a8377f0c.jpeg');
+background-size: cover;
+background-position: center right;
+}
+.gallery-img {
+transition: all 0.3s ease;
+}
+.gallery-img:hover {
+transform: scale(1.03);
+}
+.custom-checkbox {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #D2B48C;
+border-radius: 4px;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-checkbox:checked {
+background-color: #D2B48C;
+}
+.custom-checkbox:checked::after {
+content: "";
+position: absolute;
+top: 2px;
+left: 6px;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+input:focus, textarea:focus {
+outline: none;
+border-color: #D2B48C;
+box-shadow: 0 0 0 2px rgba(210, 180, 140, 0.2);
+}
+.review-card {
+transition: all 0.3s ease;
+}
+.review-card:hover {
+transform: translateY(-5px);
+}
+</style>
+</head>
+<body class="bg-white">
+<!-- Navigation -->
+<header class="fixed w-full bg-white bg-opacity-95 shadow-sm z-50">
+<div class="container mx-auto px-4 py-3 flex items-center justify-between">
+<a href="#" class="text-2xl font-['Pacifico'] text-primary">Athena's Place</a>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center space-x-6">
+<a href="#home" class="text-gray-700 hover:text-primary transition-colors">Home</a>
+<a href="#gallery" class="text-gray-700 hover:text-primary transition-colors">Gallery</a>
+<a href="#amenities" class="text-gray-700 hover:text-primary transition-colors">Amenities</a>
+<a href="#location" class="text-gray-700 hover:text-primary transition-colors">Location</a>
+<a href="#reviews" class="text-gray-700 hover:text-primary transition-colors">Reviews</a>
+<a href="#contact" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
+</nav>
+<a href="https://airbnb.com" target="_blank" class="hidden md:flex items-center bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-all">
+<div class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-home-heart-fill"></i>
+</div>
+Book Now
+</a>
+<!-- Mobile Navigation Button -->
+<div class="md:hidden flex items-center">
+<a href="https://airbnb.com" target="_blank" class="mr-4 bg-primary text-white px-3 py-1.5 !rounded-button whitespace-nowrap text-sm hover:bg-opacity-90 transition-all">
+Book Now
+</a>
+<button id="mobile-menu-button" class="w-10 h-10 flex items-center justify-center text-gray-700">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</div>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+<div class="container mx-auto px-4 py-2 flex flex-col">
+<a href="#home" class="py-2 text-gray-700">Home</a>
+<a href="#gallery" class="py-2 text-gray-700">Gallery</a>
+<a href="#amenities" class="py-2 text-gray-700">Amenities</a>
+<a href="#location" class="py-2 text-gray-700">Location</a>
+<a href="#reviews" class="py-2 text-gray-700">Reviews</a>
+<a href="#contact" class="py-2 text-gray-700">Contact</a>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section id="home" class="hero-section min-h-screen flex items-center pt-16">
+<div class="container mx-auto px-4 py-20 w-full">
+<div class="max-w-xl">
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4">Your Cozy Haven in Trece Martires</h1>
+<p class="text-lg md:text-xl text-gray-600 mb-8">Experience the perfect blend of comfort and convenience in our fully furnished condo unit at SMDC, Trece Martires, Cavite.</p>
+<div class="flex flex-col sm:flex-row gap-4 mb-12">
+<a href="https://airbnb.com" target="_blank" class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap text-center hover:bg-opacity-90 transition-all">
+Book on Airbnb
+</a>
+<a href="#gallery" class="border border-gray-300 text-gray-700 px-8 py-3 !rounded-button whitespace-nowrap text-center hover:bg-gray-50 transition-all">
+View Gallery
+</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12">
+<div class="bg-white bg-opacity-90 p-5 rounded shadow-sm">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4">
+<i class="ri-calendar-check-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-lg font-semibold mb-1">High Occupancy</h3>
+<p class="text-gray-600">26 nights/month average booking rate</p>
+</div>
+<div class="bg-white bg-opacity-90 p-5 rounded shadow-sm">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4">
+<i class="ri-star-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-lg font-semibold mb-1">Top Rated</h3>
+<p class="text-gray-600">4.9/5 average guest satisfaction</p>
+</div>
+<div class="bg-white bg-opacity-90 p-5 rounded shadow-sm">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4">
+<i class="ri-map-pin-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-lg font-semibold mb-1">Prime Location</h3>
+<p class="text-gray-600">Close to shopping, dining & attractions</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Gallery Section -->
+<section id="gallery" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Explore Our Space</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Take a visual tour of our beautifully designed condo unit, featuring modern amenities and comfortable living spaces.</p>
+</div>
+<div class="flex justify-center mb-8">
+<div class="inline-flex bg-white p-1 rounded-full shadow-sm">
+<button class="gallery-filter active px-4 py-2 rounded-full bg-primary text-white whitespace-nowrap" data-filter="all">All Spaces</button>
+<button class="gallery-filter px-4 py-2 rounded-full text-gray-700 whitespace-nowrap" data-filter="living">Living Room</button>
+<button class="gallery-filter px-4 py-2 rounded-full text-gray-700 whitespace-nowrap" data-filter="bedroom">Bedroom</button>
+<button class="gallery-filter px-4 py-2 rounded-full text-gray-700 whitespace-nowrap" data-filter="kitchen">Kitchen</button>
+<button class="gallery-filter px-4 py-2 rounded-full text-gray-700 whitespace-nowrap" data-filter="bathroom">Bathroom</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="gallery-item overflow-hidden rounded-lg shadow-md" data-category="living">
+<img src="https://static.readdy.ai/image/3674386df8dc4aaf2f910cdb65b10d5e/77e9831b032a5eb5668198fecbca5589.jpeg" alt="Living Room" class="gallery-img w-full h-64 object-cover object-top">
+<div class="p-4 bg-white">
+<h3 class="font-semibold text-lg">Stylish Living Area</h3>
+<p class="text-gray-600">Comfortable seating with smart TV and entertainment system</p>
+</div>
+</div>
+<div class="gallery-item overflow-hidden rounded-lg shadow-md" data-category="bedroom">
+<img src="https://static.readdy.ai/image/3674386df8dc4aaf2f910cdb65b10d5e/b589e5eaa6d20ab0731d56eb1ee75ed1.jpeg" alt="Bedroom" class="gallery-img w-full h-64 object-cover object-top">
+<div class="p-4 bg-white">
+<h3 class="font-semibold text-lg">Relaxing Bedroom</h3>
+<p class="text-gray-600">Queen-sized bed with premium linens and pillows</p>
+</div>
+</div>
+<div class="gallery-item overflow-hidden rounded-lg shadow-md" data-category="kitchen">
+<img src="https://static.readdy.ai/image/3674386df8dc4aaf2f910cdb65b10d5e/d10765e4078bceb005423be71af3dd07.jpeg" alt="Kitchen" class="gallery-img w-full h-64 object-cover object-top">
+<div class="p-4 bg-white">
+<h3 class="font-semibold text-lg">Fully Equipped Kitchen</h3>
+<p class="text-gray-600">Modern appliances and all essential cooking utensils</p>
+</div>
+</div>
+<div class="gallery-item overflow-hidden rounded-lg shadow-md" data-category="bathroom">
+<img src="https://static.readdy.ai/image/3674386df8dc4aaf2f910cdb65b10d5e/23ab3ee99033f750963685351d116b27.jpeg" alt="Bathroom" class="gallery-img w-full h-64 object-cover object-top">
+<div class="p-4 bg-white">
+<h3 class="font-semibold text-lg">Modern Bathroom</h3>
+<p class="text-gray-600">Hot shower with complimentary toiletries</p>
+</div>
+</div>
+<div class="gallery-item overflow-hidden rounded-lg shadow-md" data-category="living">
+<img src="https://static.readdy.ai/image/3674386df8dc4aaf2f910cdb65b10d5e/39c45bdde8e89411283fadb0ddbeaad3.jpeg" alt="Dining Area" class="gallery-img w-full h-64 object-cover object-top">
+<div class="p-4 bg-white">
+<h3 class="font-semibold text-lg">Dining Area</h3>
+<p class="text-gray-600">Perfect space for enjoying meals and conversations</p>
+</div>
+</div>
+<div class="gallery-item overflow-hidden rounded-lg shadow-md" data-category="living">
+<img src="https://static.readdy.ai/image/3674386df8dc4aaf2f910cdb65b10d5e/9f5aa323c227411257d26f03e06e6e55.jpeg" alt="Condo Exterior" class="gallery-img w-full h-64 object-cover object-top">
+<div class="p-4 bg-white">
+<h3 class="font-semibold text-lg">Building Exterior</h3>
+<p class="text-gray-600">Modern SMDC condominium with excellent amenities</p>
+</div>
+</div>
+</div>
+<div class="text-center mt-10">
+<button id="view-more-gallery" class="border border-gray-300 text-gray-700 px-8 py-3 !rounded-button whitespace-nowrap hover:bg-gray-50 transition-all">
+View All Photos
+</button>
+</div>
+</div>
+</section>
+<!-- Amenities Section -->
+<section id="amenities" class="py-20">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Comfort & Convenience</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Everything you need for a comfortable and enjoyable stay is provided in our thoughtfully equipped condo.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+<div class="w-14 h-14 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-5">
+<i class="ri-hotel-bed-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Comfortable Bedroom</h3>
+<ul class="space-y-3 text-gray-600">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+Queen-sized bed with premium mattress
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+Fresh linens and extra pillows
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+Blackout curtains for better sleep
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+Spacious wardrobe with hangers
+</li>
+</ul>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+<div class="w-14 h-14 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-5">
+<i class="ri-restaurant-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Kitchen & Dining</h3>
+<ul class="space-y-3 text-gray-600">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+Refrigerator and microwave oven
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+Electric kettle and rice cooker
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+Complete cookware and dinnerware
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+Dining table with comfortable seating
+</li>
+</ul>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+<div class="w-14 h-14 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-5">
+<i class="ri-wifi-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Entertainment & Connectivity</h3>
+<ul class="space-y-3 text-gray-600">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+High-speed WiFi internet
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+Smart TV with Netflix & Disney+
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+YouTube Premium subscription
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+Bluetooth speaker for music
+</li>
+</ul>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+<div class="w-14 h-14 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-5">
+<i class="ri-drop-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Bathroom & Toiletries</h3>
+<ul class="space-y-3 text-gray-600">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+Hot and cold shower
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+Fresh towels and bath essentials
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+Shampoo, soap, and conditioner
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+Hair dryer available
+</li>
+</ul>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+<div class="w-14 h-14 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-5">
+<i class="ri-temp-cold-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Climate & Comfort</h3>
+<ul class="space-y-3 text-gray-600">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+Air conditioning throughout
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+Electric fan for additional cooling
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+Good ventilation and natural light
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+Comfortable living space
+</li>
+</ul>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+<div class="w-14 h-14 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-5">
+<i class="ri-building-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Building Amenities</h3>
+<ul class="space-y-3 text-gray-600">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+24/7 security and CCTV monitoring
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+Swimming pool access
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+Fitness center available
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+Parking space (upon request)
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Location Section -->
+<section id="location" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Prime Location</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Perfectly situated in Trece Martires, Cavite, with easy access to shopping, dining, and transportation.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+<div class="rounded-lg overflow-hidden shadow-md h-[400px] bg-cover bg-center" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png');">
+</div>
+<div>
+<h3 class="text-2xl font-semibold mb-6">Nearby Attractions & Conveniences</h3>
+<div class="space-y-6">
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mt-1 mr-4 flex-shrink-0">
+<i class="ri-shopping-bag-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-semibold text-lg mb-1">Shopping</h4>
+<p class="text-gray-600 mb-2">SM Trece Martires (5 minutes walk)</p>
+<p class="text-gray-600">Local markets and convenience stores nearby</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mt-1 mr-4 flex-shrink-0">
+<i class="ri-restaurant-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-semibold text-lg mb-1">Dining</h4>
+<p class="text-gray-600 mb-2">Various restaurants and cafes within walking distance</p>
+<p class="text-gray-600">Food delivery services available</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mt-1 mr-4 flex-shrink-0">
+<i class="ri-bus-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-semibold text-lg mb-1">Transportation</h4>
+<p class="text-gray-600 mb-2">Public transport terminals nearby</p>
+<p class="text-gray-600">Easy access to main highways</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mt-1 mr-4 flex-shrink-0">
+<i class="ri-hospital-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-semibold text-lg mb-1">Essential Services</h4>
+<p class="text-gray-600 mb-2">Medical facilities and pharmacies</p>
+<p class="text-gray-600">Banks and ATMs within reach</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Reviews Section -->
+<section id="reviews" class="py-20">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Guest Experiences</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Don't just take our word for it. Here's what our guests have to say about their stay at Athena's Place.</p>
+</div>
+<div class="relative">
+<div class="review-slider overflow-hidden">
+<div class="review-track flex transition-transform duration-300" id="review-track">
+<div class="review-card min-w-full md:min-w-[calc(50%-1rem)] lg:min-w-[calc(33.333%-1rem)] p-1">
+<div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 h-full">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
+<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20portrait%20of%20a%20smiling%20Filipino%20woman%20in%20her%2030s%20with%20long%20black%20hair%2C%20wearing%20business%20casual%20attire.%20The%20photo%20has%20a%20clean%2C%20neutral%20background%20and%20shows%20her%20from%20shoulders%20up%20with%20a%20friendly%2C%20approachable%20expression.%20The%20lighting%20is%20soft%20and%20flattering.&width=100&height=100&seq=8&orientation=squarish" alt="Maria Santos" class="w-full h-full object-cover">
+</div>
+<div>
+<h4 class="font-semibold">Maria Santos</h4>
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+</div>
+<p class="text-gray-600 italic">"The condo was spotlessly clean and had everything we needed for our weekend stay. The location is perfect - just a short walk to SM mall. The host was very responsive and accommodating. Will definitely book again!"</p>
+<p class="text-gray-400 text-sm mt-4">May 10, 2025</p>
+</div>
+</div>
+<div class="review-card min-w-full md:min-w-[calc(50%-1rem)] lg:min-w-[calc(33.333%-1rem)] p-1">
+<div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 h-full">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
+<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20portrait%20of%20a%20Filipino%20man%20in%20his%2040s%20with%20short%20black%20hair%20and%20glasses%2C%20wearing%20a%20casual%20button-up%20shirt.%20The%20photo%20has%20a%20clean%2C%20neutral%20background%20and%20shows%20him%20from%20shoulders%20up%20with%20a%20confident%2C%20friendly%20smile.%20The%20lighting%20is%20soft%20and%20flattering.&width=100&height=100&seq=9&orientation=squarish" alt="Roberto Dela Cruz" class="w-full h-full object-cover">
+</div>
+<div>
+<h4 class="font-semibold">Roberto Dela Cruz</h4>
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+</div>
+<p class="text-gray-600 italic">"This condo exceeded our expectations! The amenities were great - especially the fast WiFi and Netflix access. The queen bed was very comfortable, and the kitchen had everything we needed to prepare meals. Highly recommended!"</p>
+<p class="text-gray-400 text-sm mt-4">April 28, 2025</p>
+</div>
+</div>
+<div class="review-card min-w-full md:min-w-[calc(50%-1rem)] lg:min-w-[calc(33.333%-1rem)] p-1">
+<div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 h-full">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
+<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20portrait%20of%20a%20Filipino%20woman%20in%20her%20mid-20s%20with%20shoulder-length%20black%20hair%2C%20wearing%20casual%20modern%20attire.%20The%20photo%20has%20a%20clean%2C%20neutral%20background%20and%20shows%20her%20from%20shoulders%20up%20with%20a%20bright%2C%20genuine%20smile.%20The%20lighting%20is%20soft%20and%20flattering.&width=100&height=100&seq=10&orientation=squarish" alt="Jenna Reyes" class="w-full h-full object-cover"></div>
+<div>
+<h4 class="font-semibold">Jenna Reyes</h4>
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-half-fill"></i>
+</div>
+</div>
+</div>
+<p class="text-gray-600 italic">"I stayed here for a business trip and it was perfect. The condo is well-maintained and has a great location. The host provided clear check-in instructions and was always available for questions. The building amenities, especially the pool, were a nice bonus!"</p>
+<p class="text-gray-400 text-sm mt-4">April 15, 2025</p>
+</div>
+</div>
+<div class="review-card min-w-full md:min-w-[calc(50%-1rem)] lg:min-w-[calc(33.333%-1rem)] p-1">
+<div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 h-full">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
+<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20portrait%20of%20a%20Filipino%20man%20in%20his%2030s%20with%20short%20black%20hair%2C%20wearing%20a%20casual%20polo%20shirt.%20The%20photo%20has%20a%20clean%2C%20neutral%20background%20and%20shows%20him%20from%20shoulders%20up%20with%20a%20relaxed%2C%20friendly%20expression.%20The%20lighting%20is%20soft%20and%20flattering.&width=100&height=100&seq=11&orientation=squarish" alt="Miguel Tan" class="w-full h-full object-cover">
+</div>
+<div>
+<h4 class="font-semibold">Miguel Tan</h4>
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+</div>
+<p class="text-gray-600 italic">"My family and I had a wonderful stay at Athena's Place. The condo was clean, cozy, and had all the amenities we needed. The location is convenient with easy access to shops and restaurants. The host was very accommodating and made sure our stay was comfortable."</p>
+<p class="text-gray-400 text-sm mt-4">March 22, 2025</p>
+</div>
+</div>
+</div>
+</div>
+<button id="review-prev" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white shadow-md rounded-full w-10 h-10 flex items-center justify-center text-gray-700 z-10 hover:bg-gray-50">
+<i class="ri-arrow-left-s-line ri-lg"></i>
+</button>
+<button id="review-next" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white shadow-md rounded-full w-10 h-10 flex items-center justify-center text-gray-700 z-10 hover:bg-gray-50">
+<i class="ri-arrow-right-s-line ri-lg"></i>
+</button>
+</div>
+<div class="flex justify-center mt-8">
+<div class="flex space-x-2" id="review-dots">
+<button class="w-2.5 h-2.5 rounded-full bg-primary" data-index="0"></button>
+<button class="w-2.5 h-2.5 rounded-full bg-gray-300" data-index="1"></button>
+<button class="w-2.5 h-2.5 rounded-full bg-gray-300" data-index="2"></button>
+<button class="w-2.5 h-2.5 rounded-full bg-gray-300" data-index="3"></button>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-12">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Get in Touch</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Have questions about our condo or want to book directly? Reach out to us and we'll get back to you as soon as possible.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<div class="bg-white p-8 rounded-lg shadow-sm">
+<h3 class="text-2xl font-semibold mb-6">Send a Message</h3>
+<form id="contact-form">
+<div class="mb-5">
+<label for="name" class="block text-gray-700 mb-2">Your Name</label>
+<input type="text" id="name" class="w-full px-4 py-3 rounded border-gray-300 border focus:border-primary" placeholder="Enter your name">
+</div>
+<div class="mb-5">
+<label for="email" class="block text-gray-700 mb-2">Email Address</label>
+<input type="email" id="email" class="w-full px-4 py-3 rounded border-gray-300 border focus:border-primary" placeholder="Enter your email">
+</div>
+<div class="mb-5">
+<label for="subject" class="block text-gray-700 mb-2">Subject</label>
+<input type="text" id="subject" class="w-full px-4 py-3 rounded border-gray-300 border focus:border-primary" placeholder="What is this about?">
+</div>
+<div class="mb-5">
+<label for="message" class="block text-gray-700 mb-2">Message</label>
+<textarea id="message" rows="4" class="w-full px-4 py-3 rounded border-gray-300 border focus:border-primary" placeholder="Your message here..."></textarea>
+</div>
+<button type="submit" class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-all w-full">Send Message</button>
+</form>
+</div>
+<div>
+<div class="bg-white p-8 rounded-lg shadow-sm mb-8">
+<h3 class="text-2xl font-semibold mb-6">Quick Booking</h3>
+<p class="text-gray-600 mb-6">For the fastest booking experience, visit our Airbnb listing directly:</p>
+<a href="https://airbnb.com" target="_blank" class="bg-[#FF5A5F] text-white px-6 py-3 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-all flex items-center justify-center">
+<div class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-airbnb-fill"></i>
+</div>
+Book on Airbnb
+</a>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm">
+<h3 class="text-xl font-semibold mb-6">Connect With Us</h3>
+<div class="space-y-4">
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mt-1 mr-4 flex-shrink-0">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-semibold mb-1">Phone</h4>
+<p class="text-gray-600">+63 906 727 5185</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mt-1 mr-4 flex-shrink-0">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-semibold mb-1">Email</h4>
+<p class="text-gray-600">athena'splace@gmail.com</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mt-1 mr-4 flex-shrink-0">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-semibold mb-1">Location</h4>
+<p class="text-gray-600">SMDC Condo, Trece Martires, Cavite, Philippines</p>
+</div>
+</div>
+</div>
+<div class="mt-8">
+<h4 class="font-semibold mb-4">Follow Us</h4>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full text-gray-600 hover:bg-primary hover:text-white transition-all">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full text-gray-600 hover:bg-primary hover:text-white transition-all">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full text-gray-600 hover:bg-primary hover:text-white transition-all">
+<i class="ri-messenger-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full text-gray-600 hover:bg-primary hover:text-white transition-all">
+<i class="ri-whatsapp-line"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-12">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div>
+<h3 class="text-2xl font-['Pacifico'] text-primary mb-4">Athena's Place</h3>
+<p class="text-gray-400 mb-6">Your cozy haven in Trece Martires, Cavite. Experience comfort, convenience, and exceptional hospitality.</p>
+<div class="flex space-x-4">
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-facebook-fill ri-lg"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-instagram-line ri-lg"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-airbnb-fill ri-lg"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+<ul class="space-y-2">
+<li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+<li><a href="#gallery" class="text-gray-400 hover:text-white transition-colors">Gallery</a></li>
+<li><a href="#amenities" class="text-gray-400 hover:text-white transition-colors">Amenities</a></li>
+<li><a href="#location" class="text-gray-400 hover:text-white transition-colors">Location</a></li>
+<li><a href="#reviews" class="text-gray-400 hover:text-white transition-colors">Reviews</a></li>
+<li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">We Accept</h4>
+<div class="flex flex-wrap gap-3">
+<div class="w-12 h-8 bg-white rounded flex items-center justify-center text-gray-800">
+<i class="ri-visa-fill ri-lg"></i>
+</div>
+<div class="w-12 h-8 bg-white rounded flex items-center justify-center text-gray-800">
+<i class="ri-mastercard-fill ri-lg"></i>
+</div>
+<div class="w-12 h-8 bg-white rounded flex items-center justify-center text-gray-800">
+<i class="ri-paypal-fill ri-lg"></i>
+</div>
+<div class="w-12 h-8 bg-white rounded flex items-center justify-center text-gray-800">
+<i class="ri-bank-card-fill ri-lg"></i>
+</div>
+</div>
+<h4 class="text-lg font-semibold mt-6 mb-4">Contact</h4>
+<p class="text-gray-400 flex items-center mb-2">
+<i class="ri-phone-line mr-2"></i> +63 912 345 6789
+</p>
+<p class="text-gray-400 flex items-center">
+<i class="ri-mail-line mr-2"></i> athenasplace@example.com
+</p>
+</div>
+</div>
+<div class="border-t border-gray-700 mt-10 pt-6 text-center text-gray-500">
+<p>&copy; 2025 Athena's Place. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Mobile Menu Toggle
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+mobileMenuButton.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+if (mobileMenuButton.querySelector('i').classList.contains('ri-menu-line')) {
+mobileMenuButton.querySelector('i').classList.remove('ri-menu-line');
+mobileMenuButton.querySelector('i').classList.add('ri-close-line');
+} else {
+mobileMenuButton.querySelector('i').classList.remove('ri-close-line');
+mobileMenuButton.querySelector('i').classList.add('ri-menu-line');
+}
+});
+// Close mobile menu when clicking on a link
+const mobileLinks = mobileMenu.querySelectorAll('a');
+mobileLinks.forEach(link => {
+link.addEventListener('click', function() {
+mobileMenu.classList.add('hidden');
+mobileMenuButton.querySelector('i').classList.remove('ri-close-line');
+mobileMenuButton.querySelector('i').classList.add('ri-menu-line');
+});
+});
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80,
+behavior: 'smooth'
+});
+}
+});
+});
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Gallery Filtering
+const galleryFilters = document.querySelectorAll('.gallery-filter');
+const galleryItems = document.querySelectorAll('.gallery-item');
+galleryFilters.forEach(filter => {
+filter.addEventListener('click', function() {
+// Remove active class from all filters
+galleryFilters.forEach(f => {
+f.classList.remove('active', 'bg-primary', 'text-white');
+f.classList.add('text-gray-700');
+});
+// Add active class to clicked filter
+this.classList.add('active', 'bg-primary', 'text-white');
+this.classList.remove('text-gray-700');
+const filterValue = this.getAttribute('data-filter');
+// Show/hide gallery items based on filter
+galleryItems.forEach(item => {
+if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+item.style.display = 'block';
+} else {
+item.style.display = 'none';
+}
+});
+});
+});
+// View More Gallery Button
+const viewMoreButton = document.getElementById('view-more-gallery');
+viewMoreButton.addEventListener('click', function() {
+// This would typically load more images or open a lightbox
+// For demo purposes, we'll just show an alert
+alert('This would open a full gallery view in a real implementation.');
+});
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Review Slider
+const track = document.getElementById('review-track');
+const prevButton = document.getElementById('review-prev');
+const nextButton = document.getElementById('review-next');
+const dots = document.querySelectorAll('#review-dots button');
+let currentIndex = 0;
+const itemWidth = 100; // Percentage
+const totalItems = document.querySelectorAll('.review-card').length;
+// Set initial position
+updateSlider();
+// Previous button click
+prevButton.addEventListener('click', function() {
+if (currentIndex > 0) {
+currentIndex--;
+updateSlider();
+}
+});
+// Next button click
+nextButton.addEventListener('click', function() {
+const maxIndex = window.innerWidth >= 1024 ? totalItems - 3 :
+window.innerWidth >= 768 ? totalItems - 2 :
+totalItems - 1;
+if (currentIndex < maxIndex) {
+currentIndex++;
+updateSlider();
+}
+});
+// Dot navigation
+dots.forEach((dot, index) => {
+dot.addEventListener('click', function() {
+currentIndex = index;
+updateSlider();
+});
+});
+// Update slider position and active dot
+function updateSlider() {
+const translateValue = window.innerWidth >= 1024 ? -(currentIndex * (itemWidth / 3)) :
+window.innerWidth >= 768 ? -(currentIndex * (itemWidth / 2)) :
+-(currentIndex * itemWidth);
+track.style.transform = `translateX(${translateValue}%)`;
+// Update active dot
+dots.forEach((dot, index) => {
+if (index === currentIndex) {
+dot.classList.remove('bg-gray-300');
+dot.classList.add('bg-primary');
+} else {
+dot.classList.remove('bg-primary');
+dot.classList.add('bg-gray-300');
+}
+});
+// Update button states
+prevButton.disabled = currentIndex === 0;
+prevButton.style.opacity = currentIndex === 0 ? '0.5' : '1';
+const maxIndex = window.innerWidth >= 1024 ? totalItems - 3 :
+window.innerWidth >= 768 ? totalItems - 2 :
+totalItems - 1;
+nextButton.disabled = currentIndex >= maxIndex;
+nextButton.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
+}
+// Update on window resize
+window.addEventListener('resize', updateSlider);
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Contact Form Submission
+const contactForm = document.getElementById('contact-form');
+contactForm.addEventListener('submit', function(e) {
+e.preventDefault();
+// Get form values
+const name = document.getElementById('name').value;
+const email = document.getElementById('email').value;
+const subject = document.getElementById('subject').value;
+const message = document.getElementById('message').value;
+// Validate form (simple validation)
+if (!name || !email || !message) {
+alert('Please fill in all required fields.');
+return;
+}
+// In a real implementation, you would send this data to a server
+// For demo purposes, we'll just show an alert
+alert(`Thank you for your message, ${name}! We will get back to you soon.`);
+// Reset form
+contactForm.reset();
+});
+});
+</script>
+</body>
+</html>
